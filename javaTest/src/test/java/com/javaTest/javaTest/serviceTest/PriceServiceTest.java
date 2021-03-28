@@ -12,6 +12,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,11 +24,11 @@ import com.javaTest.javaTest.model.Brand;
 import com.javaTest.javaTest.model.Price;
 import com.javaTest.javaTest.repository.PricesRepository;
 import com.javaTest.javaTest.serviceImpl.PriceServiceImpl;
-
 @SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class PriceServiceTest {
 
-	@Autowired
+	@InjectMocks
 	private PriceServiceImpl service;
 
 	@MockBean
@@ -47,7 +50,7 @@ class PriceServiceTest {
 	}
 
 	@Test
-	void testGetdProduct() throws ParseException {
+	void testGetProduct() throws ParseException {
 
 		Date startDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2020-06-14 00:00:00");
 		Date endDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse("2020-12-31 23:59:59");

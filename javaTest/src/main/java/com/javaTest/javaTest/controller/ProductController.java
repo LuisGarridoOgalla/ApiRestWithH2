@@ -34,7 +34,7 @@ public class ProductController {
 		PriceResponse pricesResponse =priceService.getProduct(timeDate, productId, brandId);
 		if(pricesResponse==null) {
 			throw new ResponseStatusException(
-			           HttpStatus.NOT_FOUND, "Range time not found",null);
+			           HttpStatus.NOT_FOUND, "Some data not found",null);
 		}
 		return new ResponseEntity<>(pricesResponse, HttpStatus.OK);
     }
