@@ -20,7 +20,7 @@ import com.javaTest.javaTest.service.PriceService;
 @RequestMapping("product")
 public class ProductController {
 	
-	static private String FORMAT_DATE = "yyyy-MM-dd HH:mm";
+	static final String FORMAT_DATE = "yyyy-MM-dd HH:mm";
 
 	@Autowired
 	PriceService priceService;
